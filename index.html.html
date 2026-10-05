@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>英打遊戲版本二</title>
+<style>
+body{font-family:system-ui,'Microsoft JhengHei',sans-serif;margin:0;padding:24px;text-align:center;background:#fff;color:#222}
+button{font-size:18px;padding:10px 24px;border-radius:8px;border:1px solid #444;background:#f2f2f2;cursor:pointer}
+</style>
+</head>
+<body>
+<h1>英打遊戲版本二</h1>
+<p><img id="kb" src="assets/keyboard.png" alt="英文鍵盤" style="max-width:100%"></p>
+<p id="msg"></p>
+<button id="go">開始</button>
+<script>
+var a = new Audio("assets/beep.wav");
+document.getElementById("kb").onerror = function(){
+  document.getElementById("msg").textContent = "找不到鍵盤圖片";
+};
+a.onerror = function(){
+  document.getElementById("msg").textContent = "找不到聲音檔";
+};
+document.getElementById("go").onclick = function(){
+  a.currentTime = 0;
+  a.play();
+};
+</script>
+</body>
+</html>
